@@ -11,6 +11,8 @@ fi
 pkglist=`cat pkglist`
 req_id=`uuidgen`
 archive_dir="$req_id"
+os_flavor="ubuntu"
+os_version=$1
 
 install_docker() {
     apt-get update
@@ -46,7 +48,7 @@ is_pkg_installed () {
 is_pkg_installed "docker-ce"
 
 echo "Starting container..."
-docker run --name $req_id -id ubuntu:18.04
+docker run --name $req_id -id $os_flavor:$os_version
 echo "Updating repositories..."
 docker exec -it $req_id apt-get update
 echo "Installing dependencies for downloading packages..."
@@ -65,5 +67,5 @@ docker stop $req_id
 docker rm $req_id
 
 cp pkglist $archive_dir/
-cp installpkgs $archive_dir/
+cp installpkgs.sh $archive_dir/
 tar -zcvf $archive_dir.tar.gz $archive_dir/*
