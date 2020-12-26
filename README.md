@@ -1,5 +1,5 @@
 ## getmyarchive
-A tool that downloads linux packages with dependencies and creates an archive that can be installed on a linux server with no internet.
+getmyarchive is a tool that downloads linux packages with dependencies and creates a ready to install archive that can be installed on a linux server with no internet.
 
 ## Tool usage
 
