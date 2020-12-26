@@ -1,0 +1,6 @@
+# List down desired packages in a file named pkglist
+# in the order you want them to be installed on the destination server.
+# For example: 
+build-essential
+nginx
+
