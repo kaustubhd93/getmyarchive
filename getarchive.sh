@@ -51,8 +51,6 @@ echo "Starting container..."
 docker run --name $req_id -id $os_flavor:$os_version
 echo "Updating repositories..."
 docker exec -it $req_id apt-get update
-echo "Installing dependencies for downloading packages..."
-docker exec -it $req_id apt-get install -y curl wget
 echo "Downloading deb files..."
 for package in `echo $pkglist`
 do
