@@ -1,5 +1,6 @@
 #!/bin/bash
 os=`grep -w ID /etc/os-release | awk -F"=" '{print $2}'`
+echo "Checking compatibility..."
 if [ $os != "ubuntu" ]
 then
     echo "Operating System not supported."
